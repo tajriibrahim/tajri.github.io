@@ -19,6 +19,7 @@
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 20px;
+            /* Padding top is handled automatically by menu.js */
         }
 
         /* HEADER HUD */
@@ -28,23 +29,11 @@
             margin-bottom: 30px;
             display: flex;
             align-items: center;
+            justify-content: space-between; /* Spreads Title and Status apart */
         }
         
-        /* BACK BUTTON */
-        .back-btn {
-            text-decoration: none;
-            color: var(--cyan);
-            border: 1px solid var(--cyan);
-            padding: 5px 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            transition: 0.3s;
-            margin-right: 20px;
-        }
-        .back-btn:hover { background: var(--cyan); color: #000; }
-
         h1 { margin: 0; color: var(--cyan); letter-spacing: 2px; font-size: 1.5rem; }
-        .status { color: var(--amber); font-weight: bold; animation: pulse 2s infinite; margin-left: auto; }
+        .status { color: var(--amber); font-weight: bold; animation: pulse 2s infinite; }
 
         /* PROJECT GRID */
         .grid {
@@ -90,7 +79,6 @@
 <body>
 
     <header>
-        <a href="index.html" class="back-btn">← RETURN</a>
         <h1>REPO_LOG</h1>
         <span class="status">● LIVE FEED</span>
     </header>
@@ -99,11 +87,13 @@
         <p>Initializing Uplink...</p>
     </div>
 
+    <script src="menu.js"></script>
+
     <script>
         // ==========================================
-        // CONFIGURATION: INPUT YOUR GITHUB USERNAME BELOW
+        // CONFIGURATION: TARGET IDENTITY
         // ==========================================
-        const USERNAME = 'tajriibrahim'; // <--- CHANGE THIS
+        const USERNAME = 'tajriibrahim'; 
         // ==========================================
 
         const container = document.getElementById('project-container');
@@ -118,7 +108,7 @@
                 container.innerHTML = ''; // Clear loading text
 
                 data.forEach(repo => {
-                    // Filter out the portfolio repo itself (optional)
+                    // Filter out the portfolio repo itself
                     if (repo.name.toLowerCase() === `${USERNAME}.github.io`.toLowerCase()) return;
 
                     const card = document.createElement('div');
@@ -145,7 +135,5 @@
                 container.innerHTML = `<p style="color:red; border:1px solid red; padding:10px;">ERROR: UPLINK FAILED.<br>${error.message}</p>`;
             });
     </script>
-    <script src="menu.js"></script>
-    
 </body>
 </html>
