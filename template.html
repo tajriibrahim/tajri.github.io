@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T.A.L.O.S. // NEW_PAGE</title>
+    <style>
+        /* =========================================
+           CORE SYSTEM VISUALS (DO NOT EDIT)
+           ========================================= */
+        :root {
+            --bg: #050505;
+            --panel: #111;
+            --cyan: #00f3ff;
+            --amber: #ff9e00;
+            --text: #e0e0e0;
+            --dim: #444;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            /* Padding top handled by menu.js automatically */
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid var(--dim);
+            padding: 30px;
+            background: rgba(17, 17, 17, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* HEADERS */
+        h1 {
+            color: var(--cyan);
+            border-bottom: 1px solid var(--cyan);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0;
+        }
+
+        h2 { color: var(--amber); font-size: 1.2rem; margin-top: 30px; }
+
+        /* STANDARD TEXT */
+        p { line-height: 1.6; color: #ccc; }
+
+        /* CODE BLOCKS (For your wiring/code snippets) */
+        pre {
+            background: #000;
+            border: 1px solid var(--dim);
+            padding: 15px;
+            overflow-x: auto;
+            color: #0f0;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--cyan);
+            border: 1px solid var(--cyan);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn:hover { background: var(--cyan); color: #000; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>PAGE_TITLE</h1>
+        
+        <p>System Initialized. Awaiting content injection...</p>
+
+        <h2>Subsection Alpha</h2>
+        <p>Enter project details here. Wiring diagrams, mission parameters, or flight logs.</p>
+
+        <pre>
+void setup() {
+  Serial.begin(115200);
+  // Code goes here
+}
+        </pre>
+
+        <a href="#" class="btn">ACTION BUTTON</a>
+    </div>
+
+    <script src="menu.js"></script>
+
+</body>
+</html>
