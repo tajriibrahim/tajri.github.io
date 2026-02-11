@@ -1,1 +1,1 @@
-# tajriibrahim.github.io
+# tajri.github.io
